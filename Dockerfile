@@ -11,4 +11,4 @@ RUN apt install -y openssh-client
 RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 # Test the connection
-RUN ssh -T git@github.com
+RUN --mount=type=ssh ssh -T git@github.com
